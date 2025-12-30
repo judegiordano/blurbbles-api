@@ -8,6 +8,8 @@ require github.com/sirupsen/logrus v1.9.3 // indirect
 
 require (
 	github.com/andybalholm/brotli v1.1.0 // indirect
+	github.com/aws/aws-lambda-go v1.51.1
+	github.com/awslabs/aws-lambda-go-api-proxy v0.16.2
 	github.com/dromara/carbon/v2 v2.6.15
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/judegiordano/gogetem v1.8.0

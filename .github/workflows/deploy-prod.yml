@@ -1,0 +1,51 @@
+name: deploy prod
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pguyot/arm-runner-action@v2
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: "go.mod"
+          cache: true
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: prepare go
+        run: |
+          go clean
+          go mod tidy
+          go mod download
+
+      - name: bun install
+        run: bun install --frozen-lockfile
+
+      - name: sst install providers
+        run: |
+          set -euxo pipefail
+          bun sst install
+
+      - name: sst deploy
+        run: |
+          set -euxo pipefail
+          bun sst deploy --stage prod
+
+    env:
+      STAGE: prod
+      LOG_LEVEL: info
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

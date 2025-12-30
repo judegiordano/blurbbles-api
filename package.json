@@ -1,0 +1,13 @@
+{
+  "name": "blurble.com",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest",
+    "sst": "^3.17.25"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}
