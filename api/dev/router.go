@@ -1,9 +1,6 @@
 package dev
 
 import (
-	"time"
-
-	"blurble.com/middleware"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/monitor"
 )
@@ -13,7 +10,6 @@ type Ping struct {
 }
 
 func health(c *fiber.Ctx) error {
-	middleware.Cache(c, time.Minute)
 	return c.JSON(Ping{Alive: true})
 }
 
