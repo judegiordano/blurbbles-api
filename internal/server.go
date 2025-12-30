@@ -6,6 +6,7 @@ import (
 	"time"
 
 	"blurble.com/api/dev"
+	"blurble.com/api/prompts"
 	"blurble.com/middleware"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cache"
@@ -46,5 +47,6 @@ func Server() *fiber.App {
 	}))
 	// routes
 	dev.Router(app)
+	prompts.Router(app)
 	return app
 }

@@ -8,6 +8,7 @@ require github.com/sirupsen/logrus v1.9.3 // indirect
 
 require (
 	github.com/andybalholm/brotli v1.1.0 // indirect
+	github.com/dromara/carbon/v2 v2.6.15
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/judegiordano/gogetem v1.8.0
 	github.com/klauspost/compress v1.17.9 // indirect
