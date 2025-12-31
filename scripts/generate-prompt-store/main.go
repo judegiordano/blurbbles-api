@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"go/format"
 	"os"
+	"sort"
 
 	"blurbbles/types"
 )
@@ -51,9 +52,15 @@ func main() {
 		Index: map[string]int{
 	`)
 
-	for id, index := range idx {
+	keys := make([]string, 0, len(idx))
+	for id := range idx {
+		keys = append(keys, id)
+	}
+	sort.Strings(keys)
+
+	for _, id := range keys {
 		buf.WriteString(fmt.Sprintf(`			%q: %d,
-`, id, index))
+`, id, idx[id]))
 	}
 
 	buf.WriteString(`		},

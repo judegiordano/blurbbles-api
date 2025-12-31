@@ -20,3 +20,8 @@ func GetDailyPrompt() types.Prompt {
 	idx := int(diff) % len(generated.STORE.Prompts)
 	return generated.STORE.Prompts[idx]
 }
+
+func GetPromptById(id string) types.Prompt {
+	prompt := generated.STORE.GetById(id)
+	return prompt
+}

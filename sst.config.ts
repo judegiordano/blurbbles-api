@@ -14,6 +14,7 @@ export default $config({
     const { stage } = $app
     const environment = {
       STAGE: stage,
+      LOG_LEVEL: process.env.LOG_LEVEL
     }
 
     const api = new sst.aws.Function('blurbbles-api', {
@@ -27,7 +28,6 @@ export default $config({
           allowOrigins: ['*'],
           allowCredentials: true,
           maxAge: '1 day',
-
         }
       },
       handler: './lambdas/api/main.go',
