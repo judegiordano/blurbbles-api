@@ -1,4 +1,4 @@
-module blurble.com
+module blurbbles
 
 go 1.25.2
 

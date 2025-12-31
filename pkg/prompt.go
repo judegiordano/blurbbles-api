@@ -1,8 +1,9 @@
 package pkg
 
 import (
-	"blurble.com/internal/generated"
-	"blurble.com/types"
+	"blurbbles/internal/generated"
+	"blurbbles/types"
+
 	"github.com/dromara/carbon/v2"
 )
 

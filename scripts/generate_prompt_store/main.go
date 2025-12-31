@@ -7,7 +7,7 @@ import (
 	"go/format"
 	"os"
 
-	"blurble.com/types"
+	"blurbbles/types"
 )
 
 func main() {
@@ -31,7 +31,7 @@ func main() {
 	buf.WriteString(`
 		package generated
 
-		import "blurble.com/types"
+		import "blurbbles/types"
 
 		var STORE = types.PromptsStore{
 			Prompts: []types.Prompt{

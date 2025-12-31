@@ -5,9 +5,10 @@ import (
 	"strconv"
 	"time"
 
-	"blurble.com/api/dev"
-	"blurble.com/api/prompts"
-	"blurble.com/middleware"
+	"blurbbles/api/dev"
+	"blurbbles/api/prompts"
+	"blurbbles/middleware"
+
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cache"
 	"github.com/gofiber/fiber/v2/middleware/compress"

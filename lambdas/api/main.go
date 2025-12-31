@@ -3,7 +3,8 @@ package main
 import (
 	"context"
 
-	"blurble.com/internal"
+	"blurbbles/internal"
+
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
 	adaptor "github.com/awslabs/aws-lambda-go-api-proxy/fiber"

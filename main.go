@@ -1,6 +1,6 @@
 package main
 
-import "blurble.com/internal"
+import "blurbbles/internal"
 
 // just for running locally
 func main() {

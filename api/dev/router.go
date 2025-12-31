@@ -17,5 +17,5 @@ func Router(r fiber.Router) {
 	handler := r.Group("/dev")
 	// routes
 	handler.Get("/health", health)
-	handler.Get("/metrics", monitor.New(monitor.Config{Title: "Blurble Monitor"}))
+	handler.Get("/metrics", monitor.New(monitor.Config{Title: "blurbbles Monitor"}))
 }

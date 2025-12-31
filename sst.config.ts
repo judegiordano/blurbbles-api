@@ -1,12 +1,11 @@
 /// <reference path='./.sst/platform/config.d.ts' />
 
-const domain = 'judethings.com'
-const project = 'blurble'
+const domain = 'blurbbles.com'
 
 export default $config({
   app(input) {
     return {
-      name: project,
+      name: 'blurbbles-api',
       removal: 'remove',
       home: 'aws',
     };
@@ -17,7 +16,7 @@ export default $config({
       STAGE: stage,
     }
 
-    const api = new sst.aws.Function('blurble-api', {
+    const api = new sst.aws.Function('blurbbles-api', {
       runtime: 'go',
       architecture: 'arm64',
       memory: '1 GB',
@@ -39,12 +38,12 @@ export default $config({
       environment
     })
 
-    const router = new sst.aws.Router('blurble-api-router', {
+    const router = new sst.aws.Router('blurbbles-api-router', {
       invalidation: false,
       routes: { '/*': api.url },
       domain: {
-        name: `api.${project}.${domain}`,
-        redirects: [`www.api.${project}.${domain}`]
+        name: `api.${domain}`,
+        redirects: [`www.api.${domain}`]
       }
     })
 

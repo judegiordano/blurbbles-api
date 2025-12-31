@@ -1,4 +1,4 @@
-# blurble.com
+# blurbbles
 
 To install dependencies:
 

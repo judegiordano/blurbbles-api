@@ -3,8 +3,9 @@ package prompts
 import (
 	"time"
 
-	"blurble.com/middleware"
-	"blurble.com/pkg"
+	"blurbbles/middleware"
+	"blurbbles/pkg"
+
 	"github.com/gofiber/fiber/v2"
 )
 
